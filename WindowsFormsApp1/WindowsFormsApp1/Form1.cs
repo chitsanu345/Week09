@@ -25,13 +25,12 @@ namespace WindowsFormsApp1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen blackPen = new Pen(Color.Black, 3);
-            Point point1 = new Point(100, 100);
-            Point point2 = new Point(200, 200);
-            e.Graphics.DrawLine(blackPen, point1, point2);
-            blackPen.Dispose();
-
-
+            Pen pen = new Pen(Color.Green, 2);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            e.Graphics.DrawLine(pen, 10, 80, 220, 80);
+            pen = new Pen(Brushes.DeepSkyBlue, 4);
+            e.Graphics.DrawLine(pen, 10, 120, 220, 120);
+            pen.Dispose();
 
 
 

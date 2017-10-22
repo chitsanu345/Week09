@@ -25,13 +25,24 @@ namespace WindowsFormsApp1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen Pen = new Pen(Color.Green, 2);
-            Point[] pt = { new Point(20,200),new Point(50,20),
-                           new Point(100,100), new Point(150,230),
-                           new Point(200,200)};
-            g.DrawCurve(Pen, pt);
-            g.Dispose();
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddCurve(new Point[] {
+                 new Point(100,50),
+                 new Point(105,40),
+                 new Point(120,40),
+                 new Point(130,65),
+                 new Point(100,100)
+            }, 0.5f);
+            gp.AddCurve(new Point[] {
+                 new Point(100,100),
+                 new Point(70,65),
+                 new Point(80,40),
+                 new Point(95,40),
+                 new Point(100,50)
+            }, 0.5f);
 
+            g.DrawPath(new Pen(Color.Red, 3), gp);
+            g.Dispose();
 
 
 

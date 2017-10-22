@@ -25,12 +25,12 @@ namespace WindowsFormsApp1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Brush mybrush = new SolidBrush(Color.DarkGreen);
+            System.Drawing.Drawing2D.HatchBrush mybrush = new System.Drawing.Drawing2D.HatchBrush(System.Drawing.Drawing2D.HatchStyle.DarkVertical,
+            Color.White, Color.Violet);
             Pen mypen = new Pen(mybrush, 5);
-            g.DrawRectangle(mypen, 10, 10, 200, 200);
+            g.DrawEllipse(mypen, 10, 10, 200, 200);
             mypen.Dispose();
             mybrush.Dispose();
-
 
 
 

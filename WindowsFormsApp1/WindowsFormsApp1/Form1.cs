@@ -24,26 +24,14 @@ namespace WindowsFormsApp1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            this.SetClientSizeCore(500, 600);
             Graphics g = e.Graphics;
-            System.Drawing.Drawing2D.HatchBrush brush;
-            int x = 20;
-            int y = 20;
-            foreach (System.Drawing.Drawing2D.HatchStyle brushStyle in Enum.GetValues(typeof(System.Drawing.Drawing2D.HatchStyle)))
-            {
-                brush = new System.Drawing.Drawing2D.HatchBrush(brushStyle, Color.Navy, Color.Yellow);
-                g.FillRectangle(brush, x, y, 40, 20);
-                y += 30;
-                if ((y + 30) > this.ClientSize.Height)
-                {
-                    y = 20;
-                    x += 150;
-
-
-                }
-
-            }
+            Image image = Image.FromFile("d:\\Mountain.PNG");
+            //ใส่รูปโดยใช้ไฟล์ png เพื้อใช้เป็น Texture
+            TextureBrush brush = new TextureBrush(image);
+            Rectangle rect = new Rectangle(10, 10, 180, 150);
+            g.FillEllipse(brush, rect);
             g.Dispose();
+
 
 
 

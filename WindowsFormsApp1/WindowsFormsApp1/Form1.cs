@@ -26,13 +26,15 @@ namespace WindowsFormsApp1
         {
             Graphics g = e.Graphics;
             Pen penEllipse = new Pen(Color.Brown);
-            penEllipse.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            penEllipse.DashStyle = DashStyle.Dash;
             g.DrawEllipse(penEllipse, 20, 20, 200, 150);
 
-            Pen penArc = new Pen(Color.Magenta, 2);
-            g.DrawArc(penArc, 20, 20, 200, 150, 90, 180);
-            g.Dispose();
+            Pen penPie = new Pen(Color.Magenta, 2);
+            g.DrawPie(penPie, 20, 20, 200, 150, 45, 90);
+            Pen penpie1 = new Pen(Color.BlueViolet, 2);
+            g.DrawPie(penpie1, 20, 20, 200, 150, 150, 45);
 
+            g.Dispose();
 
 
 
